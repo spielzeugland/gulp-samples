@@ -1,9 +1,11 @@
+///<reference path="../typings/tsd.d.ts" />
+
 interface Greeter {
-  (firstName: string, lastName: string): string;
+  (person:Person): string;
 }
 
 export enum Title {
-	Mr, Mrs;
+	Mr, Mrs
 }
 
 export class Person {
@@ -20,7 +22,8 @@ export function formal (person: Person) {
 }
 
 function greetInHtml(person: Person, greeter: Greeter) {
-	var text = document.createTextNode(greeter(person));
+	var greetings = greeter(person);
+	var text = document.createTextNode(greetings);
 	document.body.appendChild(text);  
 }
 
