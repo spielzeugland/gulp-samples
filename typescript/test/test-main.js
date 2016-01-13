@@ -10,15 +10,16 @@ Object.keys(window.__karma__.files).forEach(function(file) {
     
 	//var normalizedTestModule = file.replace(/^\/base\/|\.js$/g, '');
 	var normalizedTestModule = file.replace(/^\.js$/g, '');
-	var normalizedTestModule = file.replace(/^\/base\/build\/$/g, '');
-	var normalizedTestModule = file.replace(/^\/base\/test\/$/g, 'test');
+	normalizedTestModule = file.replace(/^\/base\/out\/main\/$/g, '');
+	normalizedTestModule = file.replace(/^\/base\/out\/test\/$/g, 'out/test');
+	normalizedTestModule = file.replace(/^\/base\/test\/$/g, 'test');
     allTestFiles.push(normalizedTestModule);
   }
 });
 
 require.config({
   // Karma serves files under /base, which is the basePath from your config file
-  baseUrl: '/base/build',
+  baseUrl: '/base/out/main',
     
   // dynamically load all test files
   deps: allTestFiles,

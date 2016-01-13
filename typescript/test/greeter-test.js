@@ -1,6 +1,6 @@
 define(["require", "greeter"], function (require, greeter) {
 
-	describe('greeter module', function () {
+	describe('greeter module (js):', function () {
 
 		it('greeter.Person has firstname property', function () {
 			var mr = new greeter.Person("Bob", "Builder", greeter.Title.Mr);
@@ -21,8 +21,8 @@ define(["require", "greeter"], function (require, greeter) {
 			expect(greeter.leisure).not.toBe(undefined);
 		});
 		
-		it('greeter.leisure should exist', function () {
-			expect(greeter.leisure).not.toBe(undefined);
+		it('greeter.formal should exist', function () {
+			expect(greeter.formal).not.toBe(undefined);
 		});
 		
 		it('greeter.leisure should reply with firstname', function () {

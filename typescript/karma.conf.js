@@ -16,8 +16,9 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
 	  'test/test-main.js',
-      {pattern: 'build/**/*.js', included: false},
-      {pattern: 'test/**/*.js', included: false}
+      {pattern: 'out/main/**/*.js', included: false},
+      {pattern: 'test/**/*.js', included: false},
+	  {pattern: 'out/test/**/*.js', included: false}
     ],
 
 
@@ -39,7 +40,7 @@ module.exports = function(config) {
 
 	// https://github.com/karma-runner/karma-junit-reporter
     junitReporter: {
-      outputDir: 'test_results/xml', // results will be saved as $outputDir/$browserName.xml
+      outputDir: 'out/test_results/xml', // results will be saved as $outputDir/$browserName.xml
       outputFile: undefined, // if included, results will be saved as $outputDir/$browserName/$outputFile
       suite: '', // suite will become the package name attribute in xml testsuite element
       useBrowserName: true // add browser name to report and classes names
@@ -47,7 +48,7 @@ module.exports = function(config) {
 
 	// https://github.com/matthias-schuetz/karma-htmlfile-reporter
 	htmlReporter: {
-      outputFile: 'test_results/html/units.html',
+      outputFile: 'out/test_results/html/units.html',
       pageTitle: 'Unit Tests',
       subPageTitle: 'A description'
     },

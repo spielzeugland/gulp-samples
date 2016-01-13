@@ -1,6 +1,6 @@
-///<reference path="../typings/tsd.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
 
-interface Greeter {
+export interface Greeter {
   (person:Person): string;
 }
 
@@ -21,15 +21,3 @@ export function formal (person: Person) {
 	return "Welcome " + Title[person.title] + " " + person.lastname;
 }
 
-function greetInHtml(person: Person, greeter: Greeter) {
-	var greetings = greeter(person);
-	var text = document.createTextNode(greetings);
-	document.body.appendChild(text);  
-}
-
-export function sample() {
-	var bob = {firstname: "Bob", lastname: "Builder", title: Title.Mr};
-	var wendy = {firstname: "Wendy", lastname: "Lastname", title: Title.Mrs};
-	greetInHtml(wendy, leisure);
-	greetInHtml(bob, formal);
-}
