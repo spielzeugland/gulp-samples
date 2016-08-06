@@ -11,8 +11,7 @@ Object.keys(window.__karma__.files).forEach(function(file) {
 	//var normalizedTestModule = file.replace(/^\/base\/|\.js$/g, '');
 	var normalizedTestModule = file.replace(/^\.js$/g, '');
 	normalizedTestModule = file.replace(/^\/base\/out\/main\/$/g, '');
-	normalizedTestModule = file.replace(/^\/base\/out\/test\/$/g, 'out/test');
-	normalizedTestModule = file.replace(/^\/base\/test\/$/g, 'test');
+	normalizedTestModule = file.replace(/^\/base\/src\/test\/$/g, 'src/test');
     allTestFiles.push(normalizedTestModule);
   }
 });

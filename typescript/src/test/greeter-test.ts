@@ -1,9 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-/// <reference path="../out/definitions/greeter.d.ts" />
-
-
-// TODO How to get rid of this compiler issue?
-//      >>> test\greeter-test.ts(4,26): error TS2307: Cannot find module 'greeter'.
 import greeter = require('greeter');
 
 describe('greeter module (ts):', function () {
