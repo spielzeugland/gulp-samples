@@ -1,4 +1,3 @@
-/// <reference path="../typings/tsd.d.ts" />
 
 export interface Greeter {
   (person:Person): string;

@@ -1,0 +1,7 @@
+{
+  "name": "typescript-sample",
+  "globalDependencies": {
+    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#1984ea435fe9e93a012d50db7773db58ae5d494b",
+    "require": "github:DefinitelyTyped/DefinitelyTyped/requirejs/require.d.ts#1984ea435fe9e93a012d50db7773db58ae5d494b"
+  }
+}
