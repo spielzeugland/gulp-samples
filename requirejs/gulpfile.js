@@ -14,12 +14,17 @@ gulp.task('watch', ['compile'], function(done) {
     connect.server({
         livereload: true
     });
-	var watcher = gulp.watch(['src/**/*.js', 'test/**/*.js', 'sample/**/*.*'], ['compile']);
+
+	var watcher = gulp.watch(['src/**/*.js', 'test/**/*.js', 'sample/**/*.*'], ['watch-action']);
 	watcher.on('change', function(event) {
 	  console.log('\n=============================');
 	  console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 	  console.log('=============================\n');
 	});
+});
+
+gulp.task('watch-action', ['compile'], function(done) {
+    connect.reload();
     runKarma('./karma-watch.conf.js', done);
 });
 
@@ -34,8 +39,7 @@ gulp.task('compile', function() {
 	gulp.src('src/**/*.js')
 		.pipe(amdOptimize(requireConfig))
 		.pipe(concat('all.js'))
-		.pipe(gulp.dest('out/dist'))
-		.pipe(connect.reload());
+		.pipe(gulp.dest('out/dist'));
 });
 
 gulp.task('test', function (done) {

@@ -18,7 +18,7 @@ var merge = require('merge2');
 var tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('clean', function () {
-    return del.sync(['./out/**']);
+    del.sync(['./out/**']);
 });
 
 gulp.task('watch', ['build'], function() {
